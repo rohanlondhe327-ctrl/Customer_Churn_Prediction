@@ -1,0 +1,5 @@
+Python, Pandas, NumPy
+Scikit-learn (GridSearchCV, StandardScaler, StratifiedKFold)
+XGBoost
+imbalanced-learn (SMOTE)
+KaggleHub
