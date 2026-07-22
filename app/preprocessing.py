@@ -67,10 +67,4 @@ def engineer_features(customer) -> pd.DataFrame:
 
 
 def align_columns(df: pd.DataFrame, feature_columns: list) -> pd.DataFrame:
-    """
-    Force the row into the exact column set/order the model was trained on.
-    Any dummy column this request didn't produce (including the dropped
-    baseline category for each field, e.g. "gender_Female") correctly gets
-    filled with 0 here.
-    """
     return df.reindex(columns=feature_columns, fill_value=0)
