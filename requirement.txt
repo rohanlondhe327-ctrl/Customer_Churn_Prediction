@@ -4,3 +4,8 @@ scikit-learn
 xgboost
 imbalanced-learn
 kagglehub
+fastapi
+uvicorn
+joblib
+pydantic
+ipykernel
