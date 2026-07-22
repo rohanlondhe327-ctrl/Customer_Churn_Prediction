@@ -21,16 +21,6 @@ TENURE_LABELS = ["0-6m", "6-12m", "12-24m", "24-48m", "48m+"]
 def engineer_features(customer) -> pd.DataFrame:
     """
     Reproduce the training notebook's feature engineering for ONE request.
-
-    IMPORTANT: we do NOT call pd.get_dummies() here. get_dummies only knows
-    about the categories present in the data you hand it. During training
-    that was the whole dataset (all categories, per column). At prediction
-    time it's a single row, so get_dummies would only ever see ONE category
-    per column and (with drop_first=True) it silently drops it, producing
-    zero columns for every categorical feature. That was the bug behind
-    every prediction landing on the same result regardless of the actual
-    Contract/PaymentMethod/etc values. Instead we build the exact same
-    column names by hand (e.g. "Contract_Two year") and set them directly.
     """
     customer_dict =(
         customer.model_dump()
